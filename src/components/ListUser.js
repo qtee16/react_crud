@@ -10,14 +10,14 @@ export default function ListUser() {
     }, []);
 
     function getUsers() {
-        axios.get('http://sql102.epizy.com/api/users/').then(function(response) {
+        axios.get('http://localhost/api/users/').then(function(response) {
             console.log(response.data)
             setUsers(response.data);
         })
     }
 
     const deleteUser = (id) => {
-        axios.delete(`http://sql102.epizy.com/api/user/${id}/delete`).then(function(response) {
+        axios.delete(`http://localhost/api/user/${id}/delete`).then(function(response) {
             console.log(response.data);
             getUsers();
         })

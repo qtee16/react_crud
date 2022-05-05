@@ -14,7 +14,7 @@ export default function CreateUser() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('http://sql102.epizy.com/api/user/save', inputs).then(function(response) {
+        axios.post('http://localhost/api/user/save', inputs).then(function(response) {
             console.log(response.data);
             navigate('/');
         });

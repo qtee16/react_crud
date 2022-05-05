@@ -13,7 +13,7 @@ export default function EditUser() {
     }, []);
 
     function getUser() {
-        axios.get(`http://sql102.epizy.com/api/user/${id}`).then(function(response) {
+        axios.get(`http://localhost/api/user/${id}`).then(function(response) {
             console.log(response.data)
             setInputs(response.data);
         })
@@ -27,7 +27,7 @@ export default function EditUser() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.put(`http://sql102.epizy.com/api/user/${id}/edit`, inputs).then(function(response) {
+        axios.put(`http://localhost/api/user/${id}/edit`, inputs).then(function(response) {
             console.log(response.data);
             navigate('/');
         });
